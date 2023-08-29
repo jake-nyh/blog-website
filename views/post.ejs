@@ -1,0 +1,15 @@
+
+<%- include("partials/header"); -%>
+
+    <div>
+        <h1><%=title%></h1>
+        <a href="/post/edit/<%=_id.toString()%>" class="button">Edit</a>
+        <a href="/post/delete/<%=_id.toString()%>" class="button">Delete</a>
+    </div>
+    
+    <img class="img-post" src=<%=image%> alt="alternative_text">
+    <p class="p"><%=content%></p>
+
+
+
+<%- include("partials/footer"); -%>
