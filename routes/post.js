@@ -48,7 +48,10 @@ router.get('/edit/:id', async(req,res)=>{
     const {id} = req.params
     const post = await Post.findById(id)
     res.render("edit",{
-        _id : post._id
+        _id : post._id,
+        title : post.title,
+        image : post.image,
+        content : post.content
     })
 })
 
