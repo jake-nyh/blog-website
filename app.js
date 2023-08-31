@@ -5,12 +5,15 @@ const postRouter = require('./routes/post')
 const userRouter = require('./routes/user')
 const dotenv = require("dotenv").config()
 const app = express()
+const cors = require("cors")
 
 app.set('views', __dirname + '/views');
 app.set("view engine", "ejs")
+app.use(cors({credentials: true, origin:"*"}))
 app.use(express.json())
 app.use(express.urlencoded({extended : true}))
 app.use(express.static("public"))
+
 
 connectDb();
 
@@ -31,12 +34,7 @@ app.get("/contact", async(req, res)=>{
     })
 })
 
-// router.get("/about", async(req, res)=>{
-//     const aboutContent = "Welcome to my blog website! I'm Nyan Ye Htet..."
-//     res.render("about",{
-//         aboutContent : aboutContent
-//     })
-// })
+
 
 const port = process.env.PORT || 3000
 app.listen(port, (req,res)=>{
