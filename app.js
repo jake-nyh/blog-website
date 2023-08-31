@@ -17,8 +17,8 @@ app.use(express.static("public"))
 
 connectDb();
 
-app.use("/user", userRouter)
-app.use("/post", postRouter)
+app.use("/", userRouter)
+app.use("/", postRouter)
 
 app.get("/about", async(req, res)=>{
     const aboutContent = "Welcome to my blog website! I'm Nyan Ye Htet..."
