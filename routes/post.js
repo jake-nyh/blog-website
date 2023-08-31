@@ -27,7 +27,7 @@ router.post('/compose', async(req, res)=>{
             content
         }).save()
         
-    res.redirect('/post')
+    res.redirect('/')
 
 })
 

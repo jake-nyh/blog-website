@@ -1,20 +1,15 @@
-
 <%- include("partials/header"); -%>
-
     <h1>Home</h1>
     <p> <%= startingContent %> </p>
-    <a href="/compose" class="btn btn-primary">Create New Post</a>
+
 
   <%  posts.forEach(function(post){ %>
 
     <h1><%=post.title%></h1>
-    <img class="img" src=<%=post.image%> alt="alternative_text">
     <p>
     <%=post.content.substring(0, 100) + " ..."%>
-    <a href="<%=post._id%>">Read More</a>
+    <a href="/posts/<%=post.title%>">Read More</a>
     </p>
 
+
     <% }) %>
-
-
-<%- include("partials/footer"); -%>

@@ -32,7 +32,7 @@ router.post("/login", async(req,res)=>{
     try{
         const user = await User.findOne({email})
         if(email && user.password === password){
-          res.redirect("/post")
+          res.redirect("/")
         }else{
             throw new Error("Wrong cretentials")
         }
